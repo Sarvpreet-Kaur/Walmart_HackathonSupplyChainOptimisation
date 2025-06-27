@@ -55,13 +55,19 @@ if st.button("Run Forecast") and csv_file:
             st.subheader("Inventory Recommendation")
             st.success(result["recommendation"]["message"])
             
-            st.subheader("Model-Evaluation")
-            metrics=result["metrics"]
-            col1,col2,col3 = st.columns(3)
-            
+            st.subheader("Model Evaluation")
+            metrics = result["metrics"]
+            col1, col2, col3 = st.columns(3)
             col1.metric("MAE", f'{metrics["MAE"]:.2f}')
             col2.metric("RMSE", f'{metrics["RMSE"]:.2f}')
             col3.metric("MAPE", f'{metrics["MAPE"]:.2f}%')
+            if "Accuracy" in metrics:
+                accuracy = metrics["Accuracy"]
+            else:
+                accuracy = 100 - metrics["MAPE"]
+            col4, _, _ = st.columns(3)
+            col4.metric("Accuracy", f'{accuracy:.2f}%')
+
             
             st.subheader('Forecast-Table')
             forecast_df = pd.DataFrame(result["forecast"])
