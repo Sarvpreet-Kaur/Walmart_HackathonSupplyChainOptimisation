@@ -22,7 +22,7 @@ def prepare_product_data(df, product_name):
         raise ValueError(f"Unknown product '{product_name}'. Valid options are: {list(store_to_product_map.keys())}")
 
     store_ids = store_to_product_map[product_name]
-    product_df = df[df['Store'].isin(store_ids)]
+    product_df = df[df['Store'].isin(store_ids)].copy()
 
     # Convert weekly to daily by forward filling same sales for each weekday (simple assumption)
     product_df['Date'] = pd.to_datetime(product_df['Date'])
@@ -68,12 +68,14 @@ def evaluate_model(test_df, forecast_df):
     actual = merged['y']
     predicted = merged['yhat']
     mae = mean_absolute_error(actual, predicted)
-    rmse = mean_squared_error(actual, predicted, squared=False)
+    rmse = np.sqrt(mean_squared_error(actual, predicted))
     mape = np.mean(np.abs((actual - predicted) / actual)) * 100
+    accuracy = 100 - mape
     return {
         "MAE": round(mae, 2),
         "RMSE": round(rmse, 2),
-        "MAPE": round(mape, 2)
+        "MAPE": round(mape, 2),
+        "ACCURACY":round(accuracy,2)
     }
 
 # 6. Generate both plots
@@ -119,6 +121,16 @@ def forecast_for_product(df, product_name, forecast_days, current_stock):
 
         if len(product_df) < 30:
             raise ValueError("Not enough historical data. Minimum 30 days required.")
+        
+        test_days = min(30,forecast_days)
+        
+        train_df = product_df[:-test_days][['ds', 'y']].copy()
+        test_df = product_df[-test_days:][['ds', 'y']].copy()
+
+        
+        model_evaluation = train_prophet_model(train_df,holidays_df)
+        forecast_evaluation = forecast_sales(model_evaluation,test_days)
+        metrics = evaluate_model(test_df,forecast_evaluation)
 
         final_model = train_prophet_model(product_df, holidays_df)
         full_forecast = forecast_sales(final_model, forecast_days)
@@ -131,9 +143,9 @@ def forecast_for_product(df, product_name, forecast_days, current_stock):
 
         return {
             "forecast": forecast_tail.to_dict(orient='records'),
+            "metrics":metrics,
             "plot_with_history": plot_with_history,
             "plot_forecast_only": plot_forecast_only,
-
             "recommendation": recommendation
         }
     except Exception as e:
@@ -159,6 +171,10 @@ if __name__ == "__main__":
         print("❌ Error occurred:", result['error'])
     else:
         print("📦 Inventory Advice:", result['recommendation']['message'])
+        
+        print("Evaluatoin metrics:")
+        for key,value in result['metrics'].items():
+            print(f"{key}:{value}")
 
         with open("forecast_with_history.png", "wb") as f:
             f.write(base64.b64decode(result['plot_with_history']))
