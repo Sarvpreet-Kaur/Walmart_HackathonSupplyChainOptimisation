@@ -3,3 +3,8 @@ prophet
 matplotlib
 scikit-learn
 plotly
+python-multipart
+fastapi
+uvicorn
+streamlit
+requests
