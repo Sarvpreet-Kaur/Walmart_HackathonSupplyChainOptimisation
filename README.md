@@ -61,6 +61,9 @@ We tested our solution on the following simulated datasets:
 Each product’s dataset follows a realistic trend with seasonality and noise.
 
 🚀 How to Run the Project
+Run this link directly to see the working:
+https://walmarthackathonsupplychainoptimisation-ahoa5v5yxzgktsujmxpe2r.streamlit.app/
+
 Clone the repo:
 git clone https://github.com/your-username/Walmart-HackathonSupplyChainOptimisation.git
 cd Walmart-HackathonSupplyChainOptimisation
