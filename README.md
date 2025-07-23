@@ -62,36 +62,36 @@ Each product’s dataset follows a realistic trend with seasonality and noise.
 
 ## 🚀 How to Run the Project
 Run this link directly to see the working:<br>
-https://walmarthackathonsupplychainoptimisation-ahoa5v5yxzgktsujmxpe2r.streamlit.app/
+https://walmarthackathonsupplychainoptimisation-ahoa5v5yxzgktsujmxpe2r.streamlit.app/<br>
 
-Clone the repo:
-git clone https://github.com/your-username/Walmart-HackathonSupplyChainOptimisation.git
-cd Walmart-HackathonSupplyChainOptimisation
+Clone the repo:<br>
+git clone https://github.com/your-username/Walmart-HackathonSupplyChainOptimisation.git<br>
+cd Walmart-HackathonSupplyChainOptimisation<br>
 
-Install dependencies:
-pip install -r requirements.txt
+Install dependencies:<br>
+pip install -r requirements.txt<br>
 
-Run the backend (FastAPI):
-uvicorn app.main:app --reload
+Run the backend (FastAPI):<br>
+uvicorn app.main:app --reload<br>
 
-Run the Streamlit frontend:
-streamlit run frontend/app.py
+Run the Streamlit frontend:<br>
+streamlit run frontend/app.py<br>
 
 📊 Sample Input Format
-ds,y
-2024-01-01,120
-2024-01-02,135
-2024-01-03,90
-...
-ds: date
-y: number of units sold
+ds,y<br>
+2024-01-01,120<br>
+2024-01-02,135<br>
+2024-01-03,90<br>
+...<br>
+ds: date<br>
+y: number of units sold<br>
 
 ## 🌍 Impact
 Benefit	Description
-🎯 Less Overstock	Reduces markdowns, spoilage, and waste
-✅ Right-Time Replenishment	Helps stores avoid out-of-stock situations
-🌱 Sustainability Aligned	Supports Walmart’s goal of responsible retail
-💰 Cost Efficiency	Reduces holding and transportation costs
+🎯 Less Overstock	Reduces markdowns, spoilage, and waste<br>
+✅ Right-Time Replenishment	Helps stores avoid out-of-stock situations<br>
+🌱 Sustainability Aligned	Supports Walmart’s goal of responsible retail<br>
+💰 Cost Efficiency	Reduces holding and transportation costs<br>
 
 ## 👥 Team
 Sarvpreet Kaur — AI Developer
