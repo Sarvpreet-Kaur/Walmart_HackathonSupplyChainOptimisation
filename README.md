@@ -1,4 +1,4 @@
-### 🛒 AI-Powered Inventory Forecasting for Sustainable Retail
+# 🛒 AI-Powered Inventory Forecasting for Sustainable Retail
 Reducing Overstock and Waste with Intelligent Demand Prediction
 
 ## 📌 Problem Statement
