@@ -61,7 +61,7 @@ We tested our solution on the following simulated datasets:
 Each product’s dataset follows a realistic trend with seasonality and noise.
 
 ## 🚀 How to Run the Project
-Run this link directly to see the working:
+Run this link directly to see the working:<br>
 https://walmarthackathonsupplychainoptimisation-ahoa5v5yxzgktsujmxpe2r.streamlit.app/
 
 Clone the repo:
@@ -103,7 +103,7 @@ Rishabh Srivastava — Backend + UI Developer
 🤖 Advanced ML model options (XGBoost, LSTM)
 📊 Dashboard with KPIs & sustainability metrics
 
-###📽️ Demo Video 
+### 📽️ Demo Video 
 https://drive.google.com/file/d/1wde-6muSvpLM-aDMtLQ7C1Ya7Gz4MjG1/view?usp=drive_link<br>
 YouTube demo link
 https://youtu.be/efOHcBKlLiI
