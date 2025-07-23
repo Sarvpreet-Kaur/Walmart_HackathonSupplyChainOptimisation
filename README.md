@@ -44,19 +44,19 @@ Layer	Tech Used
 5. Forecast accuracy and visual trends are also shown
 
 ## ⚙️ Output:
-✅ Predicted daily sales
-📉 Units overstocked or 📈 Reorder suggestion
-📊 Forecast chart + model accuracy
-🎯 Sustainability metric: Wasted units avoided
+✅ Predicted daily sales<br>
+📉 Units overstocked or 📈 Reorder suggestion<br>
+📊 Forecast chart + model accuracy<br>
+🎯 Sustainability metric: Wasted units avoided<br>
 
 ## 📦 Sample Products
-We tested our solution on the following simulated datasets:
+We tested our solution on the following simulated datasets:<br>
 
-🥛 Milk
-🍞 Bread
-🍎 Fruits
-🧼 Detergent
-🍪 Snacks
+🥛 Milk<br>
+🍞 Bread<br>
+🍎 Fruits<br>
+🧼 Detergent<br>
+🍪 Snacks<br>
 
 Each product’s dataset follows a realistic trend with seasonality and noise.
 
@@ -87,7 +87,6 @@ ds: date<br>
 y: number of units sold<br>
 
 ## 🌍 Impact
-Benefit	Description
 🎯 Less Overstock	Reduces markdowns, spoilage, and waste<br>
 ✅ Right-Time Replenishment	Helps stores avoid out-of-stock situations<br>
 🌱 Sustainability Aligned	Supports Walmart’s goal of responsible retail<br>
